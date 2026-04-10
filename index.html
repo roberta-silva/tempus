@@ -1,168 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ferramentas de tempo e datas em um só lugar: calculadora de idade, diferença entre datas, contagem regressiva, cronômetro e relógio online.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500&family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto+Mono:wght@200;300&display=swap" rel="stylesheet">
 
-  <link rel="preload" href="./src/css/style.css" as="style">
-  <link rel="stylesheet" href="./src/css/style.css">
-  <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon">
-  <title>TimeHub | Ferramentas de Tempo e Datas Online</title>
+  <title>Relógio & Temporizador</title>
 </head>
 
-<body data-tema="dark">
-  <header class="header-home">
-    <a href="./index.html"><svg width="133" height="25" viewBox="0 0 133 25" fill="var(--cor-texto-primario)" xmlns="http://www.w3.org/2000/svg" alt="timehub">
-        <path d="M5.184 9.216V19.552C5.184 20.4053 5.36533 21.0133 5.728 21.376C6.09067 21.7173 6.72 21.888 7.616 21.888H9.76V24.352H7.136C5.51467 24.352 4.29867 23.9787 3.488 23.232C2.67733 22.4853 2.272 21.2587 2.272 19.552V9.216H0V6.816H2.272V2.4H5.184V6.816H9.76V9.216H5.184Z" />
-        <path d="M14.7922 3.968C14.2376 3.968 13.7683 3.776 13.3843 3.392C13.0003 3.008 12.8083 2.53867 12.8083 1.984C12.8083 1.42933 13.0003 0.96 13.3843 0.576C13.7683 0.192 14.2376 0 14.7922 0C15.3256 0 15.7736 0.192 16.1362 0.576C16.5202 0.96 16.7122 1.42933 16.7122 1.984C16.7122 2.53867 16.5202 3.008 16.1362 3.392C15.7736 3.776 15.3256 3.968 14.7922 3.968ZM16.2003 6.816V24.352H13.2882V6.816H16.2003Z" />
-        <path d="M42.2513 6.496C43.6166 6.496 44.8326 6.784 45.8993 7.36C46.9659 7.91467 47.8086 8.75733 48.4272 9.888C49.0459 11.0187 49.3553 12.3947 49.3553 14.016V24.352H46.4753V14.432C46.4753 12.6827 46.0379 11.3493 45.1632 10.432C44.3099 9.49333 43.1473 9.024 41.6753 9.024C40.1606 9.024 38.9552 9.51467 38.0592 10.496C37.1632 11.456 36.7153 12.8533 36.7153 14.688V24.352H33.8353V14.432C33.8353 12.6827 33.3979 11.3493 32.5233 10.432C31.6699 9.49333 30.5072 9.024 29.0352 9.024C27.5206 9.024 26.3153 9.51467 25.4193 10.496C24.5233 11.456 24.0753 12.8533 24.0753 14.688V24.352H21.1632V6.816H24.0753V9.344C24.6513 8.42667 25.4192 7.72267 26.3792 7.232C27.3606 6.74133 28.4379 6.496 29.6112 6.496C31.0833 6.496 32.3846 6.82667 33.5153 7.488C34.6459 8.14933 35.4886 9.12 36.0433 10.4C36.5339 9.16267 37.3446 8.20267 38.4753 7.52C39.6059 6.83733 40.8646 6.496 42.2513 6.496Z" />
-        <path d="M70.132 14.912C70.132 15.4667 70.1 16.0533 70.036 16.672H56.02C56.1267 18.4 56.7133 19.7547 57.78 20.736C58.868 21.696 60.18 22.176 61.716 22.176C62.9747 22.176 64.02 21.888 64.852 21.312C65.7053 20.7147 66.3027 19.9253 66.644 18.944H69.78C69.3107 20.6293 68.372 22.0053 66.964 23.072C65.556 24.1173 63.8067 24.64 61.716 24.64C60.052 24.64 58.5587 24.2667 57.236 23.52C55.9347 22.7733 54.9107 21.7173 54.164 20.352C53.4173 18.9653 53.044 17.3653 53.044 15.552C53.044 13.7387 53.4067 12.1493 54.132 10.784C54.8573 9.41867 55.8707 8.37333 57.172 7.648C58.4947 6.90133 60.0093 6.528 61.716 6.528C63.38 6.528 64.852 6.89067 66.132 7.616C67.412 8.34133 68.3933 9.344 69.076 10.624C69.78 11.8827 70.132 13.312 70.132 14.912ZM67.124 14.304C67.124 13.1947 66.8787 12.2453 66.388 11.456C65.8973 10.6453 65.2253 10.0373 64.372 9.632C63.54 9.20533 62.612 8.992 61.588 8.992C60.116 8.992 58.8573 9.46133 57.812 10.4C56.788 11.3387 56.2013 12.64 56.052 14.304H67.124Z" />
-        <path d="M82.6797 6.496C84.0024 6.496 85.1971 6.784 86.2637 7.36C87.3304 7.91467 88.1624 8.75733 88.7598 9.888C89.3784 11.0187 89.6878 12.3947 89.6878 14.016V24.352H86.8077V14.432C86.8077 12.6827 86.3704 11.3493 85.4958 10.432C84.6211 9.49333 83.4264 9.024 81.9118 9.024C80.3758 9.024 79.1491 9.504 78.2318 10.464C77.3358 11.424 76.8877 12.8213 76.8877 14.656V24.352H73.9758V0.672001H76.8877V9.312C77.4637 8.416 78.2531 7.72267 79.2558 7.232C80.2798 6.74133 81.4211 6.496 82.6797 6.496Z" />
-        <path d="M109.996 6.816V24.352H107.085V21.76C106.53 22.656 105.751 23.36 104.748 23.872C103.767 24.3627 102.679 24.608 101.484 24.608C100.119 24.608 98.8925 24.3307 97.8045 23.776C96.7165 23.2 95.8525 22.3467 95.2125 21.216C94.5938 20.0853 94.2845 18.7093 94.2845 17.088V6.816H97.1645V16.704C97.1645 18.432 97.6018 19.7653 98.4765 20.704C99.3512 21.6213 100.546 22.08 102.061 22.08C103.618 22.08 104.845 21.6 105.741 20.64C106.637 19.68 107.085 18.2827 107.085 16.448V6.816H109.996Z" />
-        <path d="M117.825 10.08C118.423 9.03467 119.297 8.18133 120.449 7.52C121.601 6.85867 122.913 6.528 124.385 6.528C125.964 6.528 127.383 6.90133 128.641 7.648C129.9 8.39467 130.892 9.45067 131.617 10.816C132.343 12.16 132.705 13.728 132.705 15.52C132.705 17.2907 132.343 18.8693 131.617 20.256C130.892 21.6427 129.889 22.72 128.609 23.488C127.351 24.256 125.943 24.64 124.385 24.64C122.871 24.64 121.537 24.3093 120.385 23.648C119.255 22.9867 118.401 22.144 117.825 21.12V24.352H114.913V0.672001H117.825V10.08ZM129.729 15.52C129.729 14.1973 129.463 13.0453 128.929 12.064C128.396 11.0827 127.671 10.336 126.753 9.824C125.857 9.312 124.865 9.056 123.777 9.056C122.711 9.056 121.719 9.32267 120.801 9.856C119.905 10.368 119.18 11.1253 118.625 12.128C118.092 13.1093 117.825 14.2507 117.825 15.552C117.825 16.8747 118.092 18.0373 118.625 19.04C119.18 20.0213 119.905 20.7787 120.801 21.312C121.719 21.824 122.711 22.08 123.777 22.08C124.865 22.08 125.857 21.824 126.753 21.312C127.671 20.7787 128.396 20.0213 128.929 19.04C129.463 18.0373 129.729 16.864 129.729 15.52Z" />
-      </svg>
-    </a>
-    <button class="header__btn" id="btn-tema" aria-label="Alterar tema">
-      <img src="../src/img/theme.svg" alt="">
-    </button>
-  </header>
-
-  <main>
-    <h1 class="sr-only">Ferramentas de tempo e datas</h1>
-    <div class="container-home">
-      <section class="temporizador-home u-ferramenta">
-        <h2 class="u-ferramenta-titulo"><a href="./temporizador/index.html">temporizador</a></h2>
-        <div class="temporizador-home__conteudo u-bloco">
-          <div class="temporizador-home__formulario">
-            <label class="sr-only" for="temporizador-data">selecionar data final do temporizador</label>
-            <input class="u-input" type="datetime-local" name="temporizador-data" id="temporizador-data" aria-describedby="data-por-extenso">
-          </div>
-          <output class="temporizador-home__tempo">00:00:00</output>
-          <a href="./temporizador/index.html" class="temporizador-home__link u-abrir-pagina" aria-label="Abrir temporizador">
-            <img src="./src/img/go.svg" alt="Abrir temporizador">
-          </a>
-        </div>
-      </section>
-
-      <section class="horario-atual-home u-ferramenta">
-        <h2 class="u-ferramenta-titulo"><a href="./horario-atual/">horário atual</a></h2>
-        <div class="horario-atual-home__conteudo u-bloco">
-          <time class="horario-atual-home__hora">00:00:00</time>
-          <span class="horario-atual-home__local">horário de Brasília (UTC-3)</span>
-          <a href="./horario-atual/index.html" class="horario-atual-home__link u-abrir-pagina" aria-label="Abrir horario atual">
-            <img src="./src/img/go.svg" alt="Abrir horário atual">
-          </a>
-        </div>
-      </section>
-
-      <section class="cronometro-home u-ferramenta">
-        <h2 class="u-ferramenta-titulo"><a href="./cronometro/index.html">cronômetro</a></h2>
-        <div class="cronometro-home__conteudo u-bloco">
-          <output class="cronometro-home__tempo">00:00:00</output>
-          <div class="cronometro-home__opcoes">
-            <button type="button">iniciar</button>
-            <button type="button">parar</button>
-            <button type="button">reiniciar</button>
-          </div>
-          <a href="./cronometro/index.html" class="cronometro-home__link u-abrir-pagina" aria-label="Abrir cronometro">
-            <img src="./src/img/go.svg" alt="Abrir cronômetro">
-          </a>
-        </div>
-      </section>
-
-      <section class="calculadora-idade-home u-ferramenta">
-        <h2 class="u-ferramenta-titulo"><a href="./calculadora-idade/index.html">calculadora de idade</a></h2>
-        <div class="calculadora-idade-home__conteudo u-bloco">
-          <div class="calculadora-idade-home__input">
-            <label class="sr-only" for="calculadora-idade">Data de nascimento</label>
-            <input class="u-input" type="date" name="calculadora-idade" id="calculadora-idade">
-          </div>
-          <span class="calculadora-idade-home__texto">
-            <output class="calculadora-idade-home__anos-resultado calculadora-idade-home__texto--result">00</output>
-            anos</span>
-          <span class="calculadora-idade-home__texto"><output class="calculadora-idade-home__meses-resultado calculadora-idade-home__texto--result">00</output> meses</span>
-          <span class="calculadora-idade-home__texto"><output class="calculadora-idade-home__dias-resultado calculadora-idade-home__texto--result">00</output> dias</span>
-          <a href="./calculadora-idade/index.html" class="calculadora-idade-home__link u-abrir-pagina" aria-label="Abrir calculadora de idade">
-            <img src="./src/img/go.svg" alt="Abrir calculadora de idade">
-          </a>
-        </div>
-      </section>
-
-      <section class="conversor-tempo-home u-ferramenta">
-        <h2 class="u-ferramenta-titulo"><a href="./conversor-tempo/index.html">conversor de tempo</a></h2>
-        <div class="conversor-tempo-home__conteudo u-bloco">
-          <div class="conversor-tempo-home__inputs">
-            <div class="conversor-tempo-home__opcoes">
-              <label class="u-label" for="conversor-anos">anos</label>
-              <input class="u-input" type="number" name="conversor-anos" id="conversor-anos" min="0">
-            </div>
-            <div class="conversor-tempo-home__opcoes">
-              <label class="u-label" for="conversor-meses">meses</label>
-              <input class="u-input" type="number" name="conversor-meses" id="conversor-meses" min="0">
-            </div>
-            <div class="conversor-tempo-home__opcoes">
-              <label class="u-label" for="conversor-semanas">semanas</label>
-              <input class="u-input" type="number" name="conversor-semanas" id="conversor-semanas" min="0">
-            </div>
-            <div class="conversor-tempo-home__opcoes">
-              <label class="u-label" for="conversor-dias">dias</label>
-              <input class="u-input" type="number" name="conversor-dias" id="conversor-dias" min="0">
-            </div>
-            <div class="conversor-tempo-home__opcoes">
-              <label class="u-label" for="conversor-horas">horas</label>
-              <input class="u-input" type="number" name="conversor-horas" id="conversor-horas" min="0">
-            </div>
-            <div class="conversor-tempo-home__opcoes">
-              <label class="u-label" for="conversor-minutos">minutos</label>
-              <input class="u-input" type="number" name="conversor-minutos" id="conversor-minutos" min="0">
-            </div>
-            <div class="conversor-tempo-home__opcoes">
-              <label class="u-label" for="conversor-segundos">segundos</label>
-              <input class="u-input" type="number" name="conversor-segundos" id="conversor-segundos" min="0">
-            </div>
-          </div>
-          <a href="./conversor-tempo/index.html" class="conversor-tempo-home__link u-abrir-pagina" aria-label="Abrir conversor de tempo">
-            <img src="./src/img/go.svg" alt="Abrir conversor de tempo">
-          </a>
-        </div>
-      </section>
-
-      <section class="calculo-datas-home u-ferramenta">
-        <h2 class="u-ferramenta-titulo"><a href="./calculo-datas/index.html">cálculo entre datas</a></h2>
-        <div class="calculo-datas-home__conteudo u-bloco">
-          <div class="calculo-datas-home__inputs">
-            <div class="calculo-datas-home__opcoes">
-              <label class="u-label" for="calculo-datas-inicial">data inicial</label>
-              <input class="u-input" type="date" name="calculo-datas-inicial" id="calculo-datas-inicial">
-            </div>
-            <div class="calculo-datas-home__opcoes">
-              <label class="u-label" for="calculo-datas-final">data final</label>
-              <input class="u-input" type="date" name="calculo-datas-final" id="calculo-datas-final">
-            </div>
-          </div>
-          <span class="calculo-datas-home__resultado">
-            <output class="calculo-datas-home__resultado-valor">66</output>
-            <span class="calculo-datas-home__resultado-rotulo">dias</span>
-          </span>
-          <a href="./calculo-datas/index.html" class="calculo-datas-home__link u-abrir-pagina" aria-label="Abrir calculo de datas">
-            <img src="./src/img/go.svg" alt="Abrir cálculo entre datas">
-          </a>
-        </div>
-      </section>
-
-    </div>
-  </main>
-
-  <footer class="footer">
-    <p>© 2026 timehub · desenvolvido por <a href="https://robertadasilva.com.br" target="_blank" rel="noopener noreferrer">Roberta da Silva<img src="./src/img/go.svg" alt="abrir site pessoal"></a></p>
-  </footer>
-  <script type="module" src="./src/js/script.js"></script>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 
 </html>

@@ -1,0 +1,82 @@
+body,
+p {
+  margin: 0;
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+a {
+  text-decoration: none;
+}
+html {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0a0a0a;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+h1 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+.texto-principal {
+  font-family: 'Roboto Mono', sans-serif;
+  font-size: 6.5rem;
+  font-weight: 300;
+  font-variant-numeric: tabular-nums;
+  color: #fff;
+}
+.texto-secundario {
+  color: #555;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.btn {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.8rem 1.6rem;
+  border: 1px solid #333;
+  border-radius: 0.2rem;
+  background: #111;
+  color: #888;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #251e11;
+  color: #ffa500;
+  border: 1px solid #251e11;
+}
+
+.opcoes {
+  display: flex;
+  gap: 0.8rem;
+}
+
+@media (max-width: 50rem) {
+  .texto-principal {
+    font-size: 3rem;
+  }
+}
